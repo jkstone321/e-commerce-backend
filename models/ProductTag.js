@@ -9,17 +9,23 @@ ProductTag.init(
     // define columns
     product_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'product',
-        key: 'id'
-      }
+        key: 'id',
+        unique: false
+      },
+      onDelete: "cascade"
     },
     tag_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'tag',
-        key: 'id'
-      }
+        key: 'id',
+        unique: false
+      },
+      onDelete: "cascade"
     }
   },
   {
